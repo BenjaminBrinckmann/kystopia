@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
+	{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    {{ block "main" . }}
+    <div class="u-contain"> 
+        {{ .Content }}
+    </div>
+    {{ end }}
+</body>
+</html>

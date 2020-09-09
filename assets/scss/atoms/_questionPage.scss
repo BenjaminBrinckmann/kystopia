@@ -1,16 +1,40 @@
 .questionPage {
     text-align: center;
-    margin: 2rem;
-
-    &__bg {
-        width: 100%;
-    } 
 
     &__wrapper {
+        input {
+            display: none;
+        }
+
+        #checkbox1 {
+    
+            &:checked ~ .video-feil {
+                display: block
+            }
+        }
+        
+        #checkbox2 {
+    
+            &:checked ~ .video-feil {
+                display: block
+            }
+        }
+
+        #checkbox3 {
+    
+            &:checked ~ .video-riktig {
+                display: block
+            }
+        }
+
+        #checkbox4 {
+    
+            &:checked ~ .video-feil {
+                display: block
+            }
+        }
+
     }
 
-    &__video {
-        
-    }
 
 }

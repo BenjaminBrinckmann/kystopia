@@ -1,9 +1,27 @@
 .button {
     padding: 0.5rem 0;
     margin-top: 1rem; 
-    border-style: solid;
+    // border-style: solid;
+    // border-color: gold;
+    display: block;
+    background-color: rgba(255, 255, 255, .5);
+    font-weight: 700;
+    font-size: larger;
 
     &:hover {
-        background-color: aqua;
+        background-color:gold;
+    }
+
+    &__video {
+        z-index: 100;
+        background-color: peru;
+        color: blue;
+        p {
+
+        }
+
+        a {
+
+        }
     }
 }

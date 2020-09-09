@@ -1,11 +1,19 @@
 ---
 title: Hva het den sterke drikken vikingene drakk?
+q1:
+  question: Spjæl
+  answer: false
+q2:
+  question: Mjød
+  answer: true
+q3:
+  question: Skum
+  answer: false
+q4:
+  question: Pjøs
+  answer: false
 ---
 
 
-{{< button title="Spjæl" url="/" >}}
-{{< button title="Mjød" url="/" >}}
-{{< button title="Skum" url="/" >}}
-{{< button title="Pjøs" url="/" >}}
 
 

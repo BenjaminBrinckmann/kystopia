@@ -4,16 +4,84 @@
 <head>
     <meta charset="utf-8">
     {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
-	{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}kystopia{{ end }}</title>
 </head>
 
-<body>
+<body style="background-image: url('background.jpg');">
     {{ block "main" . }}
-    <div class="u-contain"> 
+    <div class="questionPage">
+
+        <h2>{{ .Title }}</h2>
         {{ .Content }}
+
+        <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
+
+            <script type="text/javascript">
+                var playButton = document.getElementById("checkbox1");
+                // Event listener for the play/pause button
+                playButton.addEventListener("click", function () {
+                    if (video.paused == true) {
+                        // Play the video
+                        video.play();
+
+                        // Update the button text to 'Pause'
+                        playButton.innerHTML = "Pause";
+                    } else {
+                        // Pause the video
+                        video.pause();
+                    }
+                });
+                // function playVideo(){
+                //     var video = document.getElementById('video');
+                //     video.play();
+                //     video.addEventListener('ended',function(){
+                //         window.location = '/q1';
+                //     });
+                // }
+            </script>
+
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>
+
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2" id="q2Button" class="button">{{ .Params.q2.question }}</label>
+
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3" id="q3Button" class="button">{{ .Params.q3.question }}</label>
+
+            <input type="checkbox" id="checkbox4">
+            <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
+
+
+            <div class="video-riktig">
+                <video id="video" class="video" onclick="play();">
+                    <source src="videoriktig.mp4" type="video/mp4">
+                </video>
+                <div class="video-button">
+                    <p>Gratulerer! Du fant et stykke av sverdet. Gå videre til neste post!</p>
+                </div>
+            </div>
+            <div class="video-feil">
+                <video id="video" class="video" onclick="play();">
+                    <source src="videofeil.mp4" type="video/mp4">
+                </video>
+                <a href="/q1" class="video-button">Prøv igjen!</a>
+            </div>
+
+            <!-- <div class="video-feil">
+            </div>
+
+            <div class="video-riktig">
+            </div> -->
+        </div>
+    </div>
+    </div>
+
     </div>
     {{ end }}
 </body>
+
 </html>

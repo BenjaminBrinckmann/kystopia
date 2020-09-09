@@ -1,8 +1,15 @@
 ---
 title: Hvilket av disse er et Vikingskip?
+q1:
+  question: Osebergskipet
+  answer: true
+q2:
+  question: Luftskipet
+  answer: false
+q3:
+  question: Tankskipet
+  answer: false
+q4:
+  question: Den Sorte Dame
+  answer: false
 ---
-
-{{< button title="Osebergskipet" url="/" >}}
-{{< button title="Luftskipet " url="/" >}}
-{{< button title="Tankskipet" url="/" >}}
-{{< button title="Den Sorte Dame" url="/" >}}

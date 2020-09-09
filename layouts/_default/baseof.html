@@ -16,32 +16,8 @@
 
         <h2>{{ .Title }}</h2>
         {{ .Content }}
-
+ishjdfiskjhskdj
         <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
-
-            <script type="text/javascript">
-                var playButton = document.getElementById("checkbox1");
-                // Event listener for the play/pause button
-                playButton.addEventListener("click", function () {
-                    if (video.paused == true) {
-                        // Play the video
-                        video.play();
-
-                        // Update the button text to 'Pause'
-                        playButton.innerHTML = "Pause";
-                    } else {
-                        // Pause the video
-                        video.pause();
-                    }
-                });
-                // function playVideo(){
-                //     var video = document.getElementById('video');
-                //     video.play();
-                //     video.addEventListener('ended',function(){
-                //         window.location = '/q1';
-                //     });
-                // }
-            </script>
 
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>

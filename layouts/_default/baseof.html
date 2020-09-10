@@ -6,56 +6,68 @@
     {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
+    {{ block "pagestyles" . }}{{ end -}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}kystopia{{ end }}</title>
 </head>
+
 
 <body style="background-image: url('background.jpg');">
     {{ block "main" . }}
     <div class="questionPage">
 
-        <h2>{{ .Title }}</h2>
-        {{ .Content }}
-ishjdfiskjhskdj
         <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
 
-            <input type="checkbox" id="checkbox1">
+            <h2 class="title">{{ .Title }}</h2>
+
+            <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }} "playVideo2()"
+                {{ else }} "playVideo1()" {{ end }}>
             <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>
 
-            <input type="checkbox" id="checkbox2">
+            <input type="checkbox" id="checkbox2" onchange={{ if .Params.q2.answer }} "playVideo2()"
+                {{ else }} "playVideo1()" {{ end }}>
             <label for="checkbox2" id="q2Button" class="button">{{ .Params.q2.question }}</label>
 
-            <input type="checkbox" id="checkbox3">
+            <input type="checkbox" id="checkbox3" onchange={{ if .Params.q3.answer }} "playVideo2()"
+                {{ else }} "playVideo1()" {{ end }}>
             <label for="checkbox3" id="q3Button" class="button">{{ .Params.q3.question }}</label>
 
-            <input type="checkbox" id="checkbox4">
+            <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2()"
+                {{ else }} "playVideo1()" {{ end }}>
             <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
 
 
+            <div class="video-feil">
+                <video id="videofeil" class="video">
+                    <source src="/videofeil.mp4" type="video/mp4">
+                </video>
+                <a href="{{ .RelPermalink }}" class="video-button">Prøv igjen!</a>
+            </div>
+
             <div class="video-riktig">
-                <video id="video" class="video" onclick="play();">
+                <video id="videoriktig" class="video">
                     <source src="videoriktig.mp4" type="video/mp4">
                 </video>
-                <div class="video-button">
+                <div class="video-gratulerer">
                     <p>Gratulerer! Du fant et stykke av sverdet. Gå videre til neste post!</p>
+                    <a href="{{ .RelPermalink }}" class="video-button">Prøv igjen!</a>
                 </div>
-            </div>
-            <div class="video-feil">
-                <video id="video" class="video" onclick="play();">
-                    <source src="videofeil.mp4" type="video/mp4">
-                </video>
-                <a href="/q1" class="video-button">Prøv igjen!</a>
+                <button class="start-button" onclick="playVideo2()" type="button">Start din reise!</button>
             </div>
 
-            <!-- <div class="video-feil">
-            </div>
 
-            <div class="video-riktig">
-            </div> -->
+            <script>
+                var myVideo1 = document.getElementById("videofeil");
+                function playVideo1() {
+                    myVideo1.play();
+                }
+                var myVideo2 = document.getElementById("videoriktig");
+                function playVideo2() {
+                    myVideo2.play();
+                } 
+            </script>
+
         </div>
-    </div>
-    </div>
-
     </div>
     {{ end }}
 </body>

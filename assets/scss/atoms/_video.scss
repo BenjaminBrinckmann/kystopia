@@ -1,29 +1,66 @@
 .video {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100vw;
-
-    // &__button {
-    //     z-index: 100;
-    //     background-color: peru;
-    //     color: blue;
-    // }
+    grid-area: video;
+    display: block;
+    max-width: 90%;
 }
 
 .video-riktig {
     display: none;
+    grid-area: video-riktig;
+    background-color: darkblue;
+    height: 100vh;
+    width: auto;
+    align-content: center;
+    justify-items: center;
+    // align-self: center;
+    // justify-self: center;
+    grid-template: 
+    "video" fit-content(100%)
+    "button" fit-content(100%)
+    "video-gratulerer" fit-content(100%)
+    "start-button" fit-content(100%)
+    / 1fr
 }
 
 .video-feil {
     display: none;
-    vertical-align: bottom;
+    grid-area: video-feil;
+    background-color: darkblue;
+    height: 100vh;
+    width: auto;
+    align-content: center;
+    justify-items: center;
+    // align-self: center;
+    // justify-self: center;
+    grid-template: 
+    "video" fit-content(100%)
+    "button" fit-content(100%)
+    / 1fr
 }
 
 .video-button {
-    position: absolute;
-    z-index: 100;
+    margin: 1em;
+    padding: 1em;
+    grid-area: button;
+    background-color: peru;
+    color: blue;
+
+}
+
+.video-gratulerer {
+    grid-area: video-gratulerer;
+    margin: 1em;
+    padding: 1em;
+    grid-area: button;
+    background-color: peru;
+    color: blue;
+}
+
+.start-button {
+    display: none;
+    grid-area: start-button;
+    margin: 1em;
+    padding: 1em;
     background-color: peru;
     color: blue;
 }

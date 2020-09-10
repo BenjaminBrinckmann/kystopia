@@ -1,40 +1,33 @@
 .questionPage {
+    
+    
+    // position: relative;
     text-align: center;
-
+    
+    
     &__wrapper {
         input {
             display: none;
         }
 
-        #checkbox1 {
-    
-            &:checked ~ .video-feil {
-                display: block
-            }
-        }
-        
-        #checkbox2 {
-    
-            &:checked ~ .video-feil {
-                display: block
-            }
-        }
-
-        #checkbox3 {
-    
-            &:checked ~ .video-riktig {
-                display: block
-            }
-        }
-
-        #checkbox4 {
-    
-            &:checked ~ .video-feil {
-                display: block
-            }
-        }
-
+        display: grid;
+        // height: 100vh;
+        grid-template: 
+        "video-feil" fit-content(100%)
+        "video-riktig" fit-content(100%)
+        "title" fit-content(100%)
+        "q1Button" fit-content(100%)
+        "q2Button" fit-content(100%)
+        "q3Button" fit-content(100%)
+        "q4Button" fit-content(100%)
+        // "video-button__start" 1fr
+        / 1fr
     }
+    
+    
+}
 
-
+.title {
+    grid-area: title;
+    display: block;
 }

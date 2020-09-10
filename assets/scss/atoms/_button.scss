@@ -11,17 +11,20 @@
     &:hover {
         background-color:gold;
     }
+}
 
-    &__video {
-        z-index: 100;
-        background-color: peru;
-        color: blue;
-        p {
+#q1Button {
+    grid-area: q1Button;
+}
 
-        }
+#q2Button {
+    grid-area: q2Button;
+}
 
-        a {
+#q3Button {
+    grid-area: q3Button;
+}
 
-        }
-    }
+#q4Button {
+    grid-area: q4Button;
 }

@@ -1,0 +1,5 @@
+{{ define "pagestyles" -}}
+{{ $options := (dict "targetPath" "vikingdrikket.css" "outputStyle" "compressed") -}}
+{{ $style := resources.Get "scss/pages/_vikingdrikket.scss" | resources.ToCSS $options | resources.Fingerprint -}}
+<link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
+{{ end -}}

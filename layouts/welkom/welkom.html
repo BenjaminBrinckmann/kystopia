@@ -1,0 +1,5 @@
+{{ define "pagestyles" -}}
+{{ $options := (dict "targetPath" "welkom.css" "outputStyle" "compressed") -}}
+{{ $style := resources.Get "scss/pages/_welkom.scss" | resources.ToCSS $options | resources.Fingerprint -}}
+<link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
+{{ end -}}

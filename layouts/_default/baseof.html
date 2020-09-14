@@ -16,6 +16,8 @@
     {{ block "main" . }}
     <div class="questionPage">
 
+        <p class="questionPage__alert">Kystopia er kunt ment for å spille på mobil</p>
+
         <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
 
             <h2 class="title">{{ .Title }}</h2>
@@ -35,13 +37,19 @@
             <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2()"
                 {{ else }} "playVideo1()" {{ end }}>
             <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
-
+            
+            <div class="video-welkom">
+                <video id="videowelkom" class="video">
+                    <source src="videowelkom.mp4" type="video/mp4">
+                </video>
+                <button class="start-button" onclick="playVideo()" type="button">Start din reise!</button>
+            </div>
 
             <div class="video-feil">
                 <video id="videofeil" class="video">
                     <source src="/videofeil.mp4" type="video/mp4">
                 </video>
-                <a href="{{ .RelPermalink }}" class="video-button">Prøv igjen!</a>
+                <button class="video-button"><a href="{{ .RelPermalink }}" >Prøv igjen!</a></button>
             </div>
 
             <div class="video-riktig">
@@ -49,14 +57,20 @@
                     <source src="videoriktig.mp4" type="video/mp4">
                 </video>
                 <div class="video-gratulerer">
-                    <p>Gratulerer! Du fant et stykke av sverdet. Gå videre til neste post!</p>
-                    <a href="{{ .RelPermalink }}" class="video-button">Prøv igjen!</a>
+                    <p>Gratulerer! Du fant et stykke av sverdet. Gå videre til neste post! 
+                    </p>
+                    <a href={{ .RelPermalink }} >LUKK (test)</a>
                 </div>
-                <button class="start-button" onclick="playVideo2()" type="button">Start din reise!</button>
+                <button class="button-test"><a href={{ .RelPermalink }} >LUKK (test)</a></button>
             </div>
 
 
             <script>
+                var myVideo = document.getElementById("videowelkom");
+                function playVideo() {
+                    myVideo.play();
+                } 
+
                 var myVideo1 = document.getElementById("videofeil");
                 function playVideo1() {
                     myVideo1.play();
@@ -65,6 +79,7 @@
                 function playVideo2() {
                     myVideo2.play();
                 } 
+
             </script>
 
         </div>

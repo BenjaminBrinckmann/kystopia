@@ -25,16 +25,13 @@
             <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }}"playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>
 
-            <input type="checkbox" id="checkbox2" onchange={{ if .Params.q2.answer }} "playVideo2()"
-                {{ else }} "playVideo1()" {{ end }}>
+            <input type="checkbox" id="checkbox2" onchange={{ if .Params.q2.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox2" id="q2Button" class="button">{{ .Params.q2.question }}</label>
 
-            <input type="checkbox" id="checkbox3" onchange={{ if .Params.q3.answer }} "playVideo2()"
-                {{ else }} "playVideo1()" {{ end }}>
+            <input type="checkbox" id="checkbox3" onchange={{ if .Params.q3.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox3" id="q3Button" class="button">{{ .Params.q3.question }}</label>
 
-            <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2()"
-                {{ else }} "playVideo1()" {{ end }}>
+            <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
             
             <div class="video-welkom">

@@ -22,8 +22,7 @@
 
             <h2 class="title">{{ .Title }}</h2>
 
-            <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }} "playVideo2()"
-                {{ else }} "playVideo1()" {{ end }}>
+            <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }}"playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>
 
             <input type="checkbox" id="checkbox2" onchange={{ if .Params.q2.answer }} "playVideo2()"
@@ -42,7 +41,7 @@
                 <video id="videowelkom" class="video">
                     <source src="videowelkom.mp4" type="video/mp4">
                 </video>
-                <button class="start-button" onclick="playVideo()" type="button">Start din reise!</button>
+                <button class="start-button" onclick="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)" type="button">Start din reise!</button>
             </div>
 
             <div class="video-feil">
@@ -65,22 +64,8 @@
             </div>
 
 
-            <script>
-                var myVideo = document.getElementById("videowelkom");
-                function playVideo() {
-                    myVideo.play();
-                } 
-
-                var myVideo1 = document.getElementById("videofeil");
-                function playVideo1() {
-                    myVideo1.play();
-                }
-                var myVideo2 = document.getElementById("videoriktig");
-                function playVideo2() {
-                    myVideo2.play();
-                } 
-
-            </script>
+            <script src="/js/videokontroll.js"></script>
+            <script src="/js/pinch-action.min.js"></script>
 
         </div>
     </div>

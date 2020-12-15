@@ -1,0 +1,38 @@
+#gudenesriket {
+    
+    #checkbox1 {
+    
+        &:checked ~ .video-riktig {
+            display: grid;
+        }
+    }
+    
+    #checkbox2 {
+
+        &:checked ~ .video-feil {
+            display: grid;
+        }
+    }
+
+    #checkbox3 {
+
+        &:checked ~ .video-feil {
+            display: grid;
+        }
+    }
+
+    #checkbox4 {
+
+        &:checked ~ .video-feil {
+            display: grid;
+        }
+    }
+
+    .video-welkom {
+        display: none;
+    }
+
+    .button-test {
+        display: none;
+    }
+}

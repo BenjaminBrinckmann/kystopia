@@ -1,7 +1,7 @@
 ---
 title: Hva heter Odins to ravner?
 linktitle: odinsravner
-layout: odinsravner
+# layout: odinsravner
 q1:
   question: Smitt og Smule
   answer: false

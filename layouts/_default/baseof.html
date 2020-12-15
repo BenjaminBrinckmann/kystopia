@@ -3,10 +3,21 @@
 
 <head>
     <meta charset="utf-8">
+    
     {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
-    {{ block "pagestyles" . }}{{ end -}}
+    
+    {{ if .Site.GetPage "/sprsml" }}
+        {{ $pageLinktitle := .LinkTitle }}
+        {{ $pageCSSfilename := add $pageLinktitle ".css" }}
+        {{ $SCSSpath := printf "scss/pages/" "_" $pageLinktitle ".scss" }}
+        {{ $SCSSfile := resources.Get $SCSSpath  }}
+        {{ $pageOptions := (dict "targetPath" $pageCSSfilename "outputStyle" "compressed") -}}
+        {{ $pageStyle := $SCSSfile | toCSS $pageOptions | fingerprint -}}
+        <link href="{{ $pageStyle.RelPermalink }}" rel="stylesheet" media="all">
+    {{ end }}
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}kystopia{{ end }}</title>
 </head>
@@ -16,7 +27,7 @@
     {{ block "main" . }}
     <div class="questionPage">
 
-        <p class="questionPage__alert">Kystopia er kunt ment for å spille på mobil</p>
+        <p class="questionPage__alert">Kystopia er kun ment for å spille på mobil</p>
 
         <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
 
@@ -33,6 +44,8 @@
 
             <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
+
+            <img class="illustration" src="illustration.png" alt="illustration.png">
             
             <div class="video-welkom">
                 <video id="videowelkom" class="video">

@@ -7,18 +7,15 @@
     {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
-    {{ block "pagestyles" . }}
-        {{/*
-        {{ if .Site.GetPage "/sprsml" }}
-            {{ $pageLinktitle := .LinkTitle }}
-            {{ $pageCSSfilename := add $pageLinktitle ".css" }}
-            {{ $SCSSpath := printf "scss/pages/" "_" $pageLinktitle ".scss" }}
-            {{ $SCSSfile := resources.Get $SCSSpath  }}
-            {{ $pageOptions := (dict "targetPath" $pageCSSfilename "outputStyle" "compressed") -}}
-            {{ $pageStyle := $SCSSfile | toCSS $pageOptions | fingerprint -}}
-            <link href="{{ $pageStyle.RelPermalink }}" rel="stylesheet" media="all">
-        {{ end }}
-        */}}
+    
+    {{ if eq .Section "sprsml" }}
+        {{ $qID := .LinkTitle }}
+        {{ $outputCSS := add $qID ".css" }}
+        {{ $inputSCSS := printf "scss/pages/_%s.scss" $qID }}
+        {{ $resourceGet := resources.Get $inputSCSS }}
+        {{ $pageOptions := (dict "targetPath" $outputCSS "outputStyle" "compressed") -}}
+        {{ $qStyle := $resourceGet | toCSS $pageOptions | fingerprint -}}
+        <link href="{{ $qStyle.RelPermalink }}" rel="stylesheet" media="all">
     {{ end }}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">

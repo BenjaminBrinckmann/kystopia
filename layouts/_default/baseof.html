@@ -8,7 +8,6 @@
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
     
-
     {{ if eq .Section "sprsml" }}
         {{ $qID := .LinkTitle }}
         {{ $outputCSS := add $qID ".css" }}
@@ -19,7 +18,6 @@
         <link href="{{ $qStyle.RelPermalink }}" rel="stylesheet" media="all">
     {{ end }}
 
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}kystopia{{ end }}</title>
 </head>

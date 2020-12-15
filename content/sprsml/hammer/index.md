@@ -1,7 +1,6 @@
 ---
 title: Hvilken av gudene har en hammer?
 linktitle: hammer
-layout: hammer
 q1:
   question: Trond
   answer: false

@@ -1,7 +1,6 @@
 ---
 title: Hva kalte vikingene stedet hvor gudene bodde?
 linktitle: gudenesriket
-layout: gudenesriket
 q1:
   question: Åsgård
   answer: true

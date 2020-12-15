@@ -1,7 +1,6 @@
 ---
 title: I vikingenes religion fantes det et verdenstre. Hva heter det?
 linktitle: verdenstreet
-layout: verdenstreet
 q1:
   question: Jotnefurua
   answer: false

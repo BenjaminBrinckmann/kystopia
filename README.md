@@ -11,3 +11,5 @@
 ### Content
 
 Alt innhold definers i *frontmatter*, husk å endre `linktitle` og `layout` til <spmnavn> og definer hvilet svar som er rett og feil.
+
+### Layouts

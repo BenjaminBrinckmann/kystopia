@@ -1,1 +1,0 @@
-#hammer #checkbox1:checked~.video-feil{display:grid}#hammer #checkbox2:checked~.video-riktig{display:grid}#hammer #checkbox3:checked~.video-feil{display:grid}#hammer #checkbox4:checked~.video-feil{display:grid}#hammer .video-welkom{display:none}#hammer .button-test{display:none}

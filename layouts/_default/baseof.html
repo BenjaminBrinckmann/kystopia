@@ -26,7 +26,7 @@
 </head>
 
 
-<body style="background-image: url('background.jpg');">
+<body>
     {{ block "main" . }}
     <div class="questionPage">
 
@@ -34,7 +34,7 @@
 
         <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
 
-            <h2 class="title">{{ .Title }}</h2>
+            <h2 class="title ribbon">{{ .Title }}</h2>
 
             <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }}"playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>
@@ -48,7 +48,7 @@
             <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
 
-            <img class="illustration" src="illustration.png" alt="illustration.png">
+            <img class="illustration" src="illustration.png">
             
             <div class="video-welkom">
                 <video id="videowelkom" class="video">

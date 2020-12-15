@@ -1,4 +1,5 @@
 .questionPage {
+    
     // position: relative;
     text-align: center;
     
@@ -26,6 +27,7 @@
             "q2Button" fit-content(100%)
             "q3Button" fit-content(100%)
             "q4Button" fit-content(100%)
+            "illustration" fit-content(100%)
             / 1fr;
     }
 
@@ -46,5 +48,12 @@
     margin-left: 1em;
     margin-right: 1em;
     grid-area: title;
-    display: block;
+    display: block; 
+}
+
+.illustration {
+    margin: 0 auto;
+    padding-top: 2em;
+    max-width: 60%;
+    grid-area: illustration;
 }

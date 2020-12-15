@@ -1,1 +1,0 @@
-#odinsravner #checkbox1:checked~.video-feil{display:grid}#odinsravner #checkbox2:checked~.video-feil{display:grid}#odinsravner #checkbox3:checked~.video-riktig{display:grid}#odinsravner #checkbox4:checked~.video-feil{display:grid}#odinsravner .video-welkom{display:none}#odinsravner .button-test{display:none}

@@ -8,7 +8,8 @@
     position: relative;
     background:linear-gradient(0deg, rgba(196, 85, 34, 0.8),rgba(196, 85, 34, 0.8)), url(/images/textiletexture.png);
     background-size:cover;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(31, 5, 5, 0.8);
+    // text-shadow: 1px 1px 0px rgba(231, 200, 163, 0.8);
     text-align: center;
     padding: 1em 2em; /* Adjust to suit */
     margin: 1em auto 1em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */

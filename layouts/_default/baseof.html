@@ -51,14 +51,14 @@
                 <video id="videowelkom" class="video">
                     <source src="videowelkom.mp4" type="video/mp4">
                 </video>
-                <button class="start-button" onclick="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)" type="button">Start din reise!</button>
+                <div class="button" onclick="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)" type="button">Start din reise!</div>
             </div>
 
             <div class="video-feil">
                 <video id="videofeil" class="video">
                     <source src="/videofeil.mp4" type="video/mp4">
                 </video>
-                <button class="video-button"><a href="{{ .RelPermalink }}" >Prøv igjen!</a></button>
+                <div class="button"><a href="{{ .RelPermalink }}" >Prøv igjen!</a></div>
             </div>
 
             <div class="video-riktig">
@@ -70,7 +70,7 @@
                     </p>
                     <a href={{ .RelPermalink }} >LUKK (test)</a>
                 </div>
-                <button class="button-test"><a href={{ .RelPermalink }} >LUKK (test)</a></button>
+                {{/*  <button class="button"><a href={{ .RelPermalink }} >LUKK (test)</a></button>  */}}
             </div>
 
 

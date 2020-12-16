@@ -5,11 +5,12 @@
 ### Komponenter (filer)
 
 - content/sprsml/<spmnavn>/index.md
-- layouts/sprsml/<spmnavn>.html
 - assets/scss/pages/_<spmnavn>.scss
 
 ### Content
 
-Alt innhold definers i *frontmatter*, husk å endre `linktitle` og `layout` til <spmnavn> og definer hvilet svar som er rett og feil.
+Alt innhold definers i *frontmatter*, husk å legg til `linktitle` til <spmnavn> og definer hvilet svar som er rett og feil.
 
-### Layouts
+## SCSS
+
+Her angis hvilket svar som er rett og feil.

@@ -1,12 +1,12 @@
 .button {
     margin: .6rem auto 0 auto;
     // width: 60%;
-    color:#000000;
+    color: rgba(0, 0, 0, 0.80);
     text-decoration:none;
     font-weight: 700;
     border-radius:5px;
     border:solid 1px #8d8782;
-    text-shadow: 1px 1px 0px white;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.80);
 
     background:linear-gradient(0deg, rgba(187, 187, 187, 0.5), rgba(255, 255, 255, 0.5)), url(/images/stonetexure.png); 
     background-size:cover;

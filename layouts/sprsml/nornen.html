@@ -4,13 +4,22 @@
 
 <div class="p-nornen">
 
-    <div class="p-nornen__image">
-        <img class="p-nornen__image-bli" src="/images/nornen-bli.jpg" alt="">
-        <img class="p-nornen__image-sur" src="/images/nornen-bli.jpg" alt="">
-    </div>
+    <p class="p-questions__alert">Kystopia er kun ment for å spille på mobil</p>
 
-    <input type="checkbox" id="checkboxNornen">
-    <label for="checkboxNornen" id="nornenButton" class="button">Fullfør!</label>
+    <div class="p-nornen__wrapper">
+
+        <input type="checkbox" id="checkboxNornen">
+        <label for="checkboxNornen" class="button nornenButton">Fullfør!</label>
+
+
+        <div class="p-nornen__bli" id="image-bli">
+            <img class="p-nornen__image" src="/images/nornen-bli.jpg" alt="">
+        </div>    
+        <div class="p-nornen__sur" id="image-sur">
+            <img class="p-nornen__image" src="/images/nornen-sur.jpg" alt="">
+        </div>
+
+    </div>
 </div>
 
 {{ end }}

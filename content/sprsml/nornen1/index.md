@@ -1,5 +1,5 @@
 ---
 title: Nornen
-linktitle: nornen
+linktitle: nornen1
 layout: nornen
 ---

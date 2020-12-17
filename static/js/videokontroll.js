@@ -11,3 +11,8 @@ var myVideo2 = document.getElementById("videoriktig");
 function playVideo2() {
     myVideo2.play();
 }
+
+var myVideo = document.getElementById("videointro");
+function playVideo3() {
+    myVideo.play();
+} 

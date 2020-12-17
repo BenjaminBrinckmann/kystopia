@@ -1,0 +1,25 @@
+{{ define "title" }}kystopia{{ end }}
+
+{{ define "main" }}
+
+<div class="p-intro">
+
+    <p class="p-questions__alert">Kystopia er kun ment for å spille på mobil</p>
+
+    <div class="p-intro__wrapper">
+
+        <input type="checkbox" id="checkboxI" onchange="playVideo3();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
+        <label for="checkboxI" id="startButton" class="button">Start din reise!</label>
+
+        <div class="video-intro">
+            <video id="videointro" class="video">
+                <source src="videointro.mp4" type="video/mp4">
+            </video>
+            <a class="button" href="{{ .RelPermalink }}">Lukk(dev)</a>
+        </div>
+
+        <script src="/js/videokontroll.js"></script>
+        <script src="/js/pinch-action.min.js"></script>
+    </div>    
+</div>
+{{ end }}

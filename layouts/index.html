@@ -12,18 +12,24 @@
 
         <div class="content">{{ .Content }}</div>
 
-        <input type="checkbox" id="checkbox0" onchange="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
-        <label for="checkbox0" id="startButton" class="button">Se Intro</label>
+        <input type="checkbox" id="checkbox0"
+            onchange="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
+        <label for="checkbox0" id="welkomButton" class="button">Se Intro</label>
 
         <div class="video-welkom">
             <video id="videowelkom" class="video">
-                <source src="/videowelkom.mp4" type="video/mp4">
+                <source src="videowelkom.mp4" type="video/mp4">
             </video>
             <a class="button" href="{{ .RelPermalink }}">Lukk(dev)</a>
         </div>
 
-        <script src="/js/videokontroll.js"></script>
+        <script>
+            var myVideo = document.getElementById("videowelkom");
+            function playVideo() {
+                myVideo.play();
+            }
+        </script>
         <script src="/js/pinch-action.min.js"></script>
-    </div>    
+    </div>
 </div>
 {{ end }}

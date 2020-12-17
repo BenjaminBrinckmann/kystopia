@@ -8,8 +8,9 @@
 
     <div class="p-intro__wrapper">
 
-        <input type="checkbox" id="checkboxI" onchange="playVideo3();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
-        <label for="checkboxI" id="startButton" class="button">Start din reise!</label>
+        <input type="checkbox" id="checkboxI"
+            onchange="playVideoI();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
+        <label for="checkboxI" id="introButton" class="button">Start din reise!</label>
 
         <div class="video-intro">
             <video id="videointro" class="video">
@@ -18,8 +19,13 @@
             <a class="button" href="{{ .RelPermalink }}">Lukk(dev)</a>
         </div>
 
-        <script src="/js/videokontroll.js"></script>
+        <script>
+            var myVideo = document.getElementById("videointro");
+            function playVideoI() {
+                myVideo.play();
+            } 
+        </script>
         <script src="/js/pinch-action.min.js"></script>
-    </div>    
+    </div>
 </div>
 {{ end }}

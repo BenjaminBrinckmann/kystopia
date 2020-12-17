@@ -27,53 +27,6 @@
 
 <body>
     {{ block "main" . }}
-    <div class="p-questions">
-
-        <p class="p-questions__alert">Kystopia er kun ment for å spille på mobil</p>
-
-        <div class="p-questions__wrapper" id="{{ .LinkTitle }}">
-
-            <h2 class="ribbon">{{ .Title }}</h2>
-
-            <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }}"playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
-            <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>
-
-            <input type="checkbox" id="checkbox2" onchange={{ if .Params.q2.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
-            <label for="checkbox2" id="q2Button" class="button">{{ .Params.q2.question }}</label>
-
-            <input type="checkbox" id="checkbox3" onchange={{ if .Params.q3.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
-            <label for="checkbox3" id="q3Button" class="button">{{ .Params.q3.question }}</label>
-
-            <input type="checkbox" id="checkbox4" onchange={{ if .Params.q4.answer }} "playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
-            <label for="checkbox4" id="q4Button" class="button">{{ .Params.q4.question }}</label>
-
-            <img class="illustration" src="illustration.png">
-            
-            <div class="video-feil">
-                <video id="videofeil" class="video">
-                    <source src="/videofeil.mp4" type="video/mp4">
-                </video>
-                <a class="button" href="{{ .RelPermalink }}">Prøv igjen!</a>
-            </div>
-
-            <div class="video-riktig">
-                <video id="videoriktig" class="video">
-                    <source src="videoriktig.mp4" type="video/mp4">
-                </video>
-                <div class="video-gratulerer">
-                    <p>Gratulerer! Du klarte oppgaven. Gå videre til neste post! 
-                    </p>
-                    <a href={{ .RelPermalink }} >LUKK(dev)</a>
-                </div>
-                <a class="button button-test" href={{ .RelPermalink }} >LUKK(dev)</a>
-            </div>
-
-
-            <script src="/js/videokontroll.js"></script>
-            <script src="/js/pinch-action.min.js"></script>
-
-        </div>
-    </div>
     {{ end }}
 </body>
 

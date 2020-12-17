@@ -1,3 +1,6 @@
 baseURL: "https://url.com/"
 languageCode: "no-nb"
 title: "Kystopia"
+disableKind:
+  - tag
+  - taxonomy

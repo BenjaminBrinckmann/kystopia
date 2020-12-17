@@ -1,6 +1,7 @@
 ---
 title: Hva kalles bokstavene de brukte i vikingtiden?
 linktitle: bokstaver
+layout: sporsmal
 background: false
 q1:
   question: Broner

@@ -1,6 +1,7 @@
 ---
 title: Hvilket av disse er et Vikingskip?
 linktitle: vikingskipet
+layout: sporsmal
 q1:
   question: Osebergskipet
   answer: true

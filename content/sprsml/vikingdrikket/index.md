@@ -1,6 +1,7 @@
 ---
 title: Hva het den sterke drikken vikingene drakk?
 linktitle: vikingdrikket
+layout: sporsmal
 q1:
   question: Spjæl
   answer: false

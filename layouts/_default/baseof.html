@@ -31,7 +31,7 @@
 
         <div class="p-questions__wrapper" id="{{ .LinkTitle }}">
 
-            <h2 class="title ribbon">{{ .Title }}</h2>
+            <h2 class="ribbon">{{ .Title }}</h2>
 
             <input type="checkbox" id="checkbox1" onchange={{ if .Params.q1.answer }}"playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)"{{ else }}"playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)"{{ end }}>
             <label for="checkbox1" id="q1Button" class="button">{{ .Params.q1.question }}</label>

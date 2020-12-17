@@ -1,50 +1,13 @@
 .ribbon {
 	background-color: grey;
-}
+	padding: 1rem;
+	padding-bottom: 0;
+	margin: 1rem;
 
-/*
-.ribbon {
-    font-size: 16px !important;
-    width: 55%;
-       
-    position: relative;
-    background:linear-gradient(0deg, rgba(196, 85, 34, 0.8),rgba(196, 85, 34, 0.8)), url(/images/textiletexture.png);
-    background-size:cover;
-    color: rgba(31, 5, 5, 0.8);
-    // text-shadow: 1px 1px 0px rgba(231, 200, 163, 0.8);
-    text-align: center;
-    padding: 1em 2em; 
-    margin: 1em auto 1em; 
-    position: absolute;
-    display: block;
-    bottom: -0.5em;
-    border: 1.5em solid rgb(138, 60, 23);
-    z-index: -1;
-   }
-   .ribbon:before {
-    left: -2em;
-    border-right-width: 1.5em;
-    border-left-color: transparent;
-   }
-   .ribbon:after {
-    right: -2em;
-    border-left-width: 1.5em;
-    border-right-color: transparent;
-   }
-   .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-    content: "";
-    position: absolute;
-    display: block;
-    border-style: solid;
-    border-color: #721c0c transparent transparent transparent;
-    bottom: -1em;
-   }
-   .ribbon .ribbon-content:before {
-    left: 0;
-    border-width: 1em 0 0 1em;
-   }
-   .ribbon .ribbon-content:after {
-    right: 0;
-    border-width: 1em 1em 0 0; 
+	&::after {
+		margin: 1rem -1rem 0 -1rem;
+		content: "bannerbunn";
+		background-color: red;
+		display: block;
+	}
 }
-*/

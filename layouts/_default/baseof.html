@@ -25,11 +25,11 @@
 
 <body>
     {{ block "main" . }}
-    <div class="questionPage">
+    <div class="p-questions">
 
-        <p class="questionPage__alert">Kystopia er kun ment for å spille på mobil</p>
+        <p class="p-questions__alert">Kystopia er kun ment for å spille på mobil</p>
 
-        <div class="questionPage__wrapper" id="{{ .LinkTitle }}">
+        <div class="p-questions__wrapper" id="{{ .LinkTitle }}">
 
             <h2 class="title ribbon">{{ .Title }}</h2>
 
@@ -47,13 +47,6 @@
 
             <img class="illustration" src="illustration.png">
             
-            <div class="video-welkom">
-                <video id="videowelkom" class="video">
-                    <source src="videowelkom.mp4" type="video/mp4">
-                </video>
-                <div class="button" onclick="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)" type="button">Start din reise!</div>
-            </div>
-
             <div class="video-feil">
                 <video id="videofeil" class="video">
                     <source src="/videofeil.mp4" type="video/mp4">

@@ -1,4 +1,4 @@
-.questionPage {
+.p-questions {
     
     // position: relative;
     text-align: center;
@@ -33,27 +33,12 @@
 
 
     @media screen and (min-width: 48em) {
-        .questionPage__wrapper {
+        .p-questions__wrapper {
             display: none;
         }
 
-        .questionPage__alert {
+        .p-questions__alert {
             display: block;
         }
     }
-}
-
-.title {
-    margin-top: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
-    grid-area: title;
-    display: block; 
-}
-
-.illustration {
-    margin: 2em auto 0 auto;
-    max-height: 35vh;
-    max-width: 100%;
-    grid-area: illustration;
 }

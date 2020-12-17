@@ -12,10 +12,12 @@
         {{ $qID := .LinkTitle }}
         {{ $outputCSS := add $qID ".css" }}
         {{ $inputSCSS := printf "scss/pages/_%s.scss" $qID }}
-        {{ $resourceGet := resources.Get $inputSCSS }}
-        {{ $pageOptions := (dict "targetPath" $outputCSS "outputStyle" "compressed") -}}
-        {{ $qStyle := $resourceGet | toCSS $pageOptions | fingerprint -}}
+		{{ if (fileExists $inputSCSS) }}
+        	{{ $resourceGet := resources.Get $inputSCSS }}
+        	{{ $pageOptions := (dict "targetPath" $outputCSS "outputStyle" "compressed") -}}
+        	{{ $qStyle := $resourceGet | toCSS $pageOptions | fingerprint -}}
         <link href="{{ $qStyle.RelPermalink }}" rel="stylesheet" media="all">
+		{{ end }}
     {{ end }}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">

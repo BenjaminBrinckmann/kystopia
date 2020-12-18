@@ -1,37 +1,37 @@
 .button {
-    margin: .6rem auto 0 auto;
+    margin: 0.6rem auto 0 auto;
     // width: 60%;
-    color: rgba(0, 0, 0, 0.80);
-    text-decoration:none;
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
     font-weight: 700;
-    border-radius:5px;
-    border:solid 1px #8d8782;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.80);
+    border-radius: 5px;
+    border: solid 1px #8d8782;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
 
-    background:linear-gradient(0deg, rgba(187, 187, 187, 0.5), rgba(255, 255, 255, 0.5)), url(/images/stonetexure.png); 
-    background-size:cover;
-    text-align:center;
-    padding:16px 18px 14px;
-  
+    background: linear-gradient(0deg, rgba(187, 187, 187, 0.5), rgba(255, 255, 255, 0.5)), url(/images/stonetexure.png);
+    background-size: cover;
+    text-align: center;
+    padding: 16px 18px 14px;
+
     transition: all 0.1s;
     box-shadow: 0px 4px 0px #333232;
-    
+
     a {
-        text-decoration:none;
-        color: rgba(0, 0, 0, 0.80);
-        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.80);
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
     }
 }
 
-.button:active{
+.button:active {
     box-shadow: 0px 2px 0px #333232;
-    position:relative;
-    top:4px;
+    position: relative;
+    top: 4px;
 }
 
 // .button {
 //     padding: 0.8rem 0;
-//     margin-top: 1rem; 
+//     margin-top: 1rem;
 //     // border-style: solid;
 //     // border-color: gold;
 //     display: block;
@@ -42,8 +42,6 @@
 //         background-color:gold;
 //     }
 // }
-
-
 
 #q1Button {
     grid-area: q1Button;
@@ -70,3 +68,16 @@
 }
 
 
+.lukk {
+    grid-area: button;
+    margin-top: 1em;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: white;
+    padding: 0.2em;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}

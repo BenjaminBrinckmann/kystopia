@@ -1,7 +1,6 @@
 .ribbon {
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(255, 255, 255, 1);
 	font-size: 1.2em;
-	font-family: georgia;
 	grid-area: title;
 	background-image: url(/images/banner-top.png);
 	background-size: 100%;
@@ -11,11 +10,17 @@
 
 	h2 {
 		padding: 0 4rem 0 4rem;
+		margin-top: 2rem;
+		font-size: 1.4rem;
+		text-shadow: 1px 1px 0 black;
 		margin-bottom: 0;
 	}
+
 	&__end {
 		z-index: 5;
-		margin-bottom: -1.8rem;
+		position:relative;
+		top: -4rem;
+		margin-bottom: -5.5rem;
 		width: 100%;
 	}
 }

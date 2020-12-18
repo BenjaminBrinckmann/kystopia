@@ -7,7 +7,8 @@
     {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" media="all">
-    
+
+	<!-- TODO: CustomCSS parameter in frontmatter to define pages-->    
     {{ if eq .Section "sprsml" }}
         {{ $qID := .LinkTitle }}
         {{ $outputCSS := add $qID ".css" }}

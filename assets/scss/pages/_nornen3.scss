@@ -1,0 +1,78 @@
+.p-nornen {
+    @media screen and (min-width: 48em) {
+        .p-nornen__wrapper {
+            display: none;
+        }
+
+        .p-questions__alert {
+            display: block;
+        }
+    }
+
+    &__wrapper {
+        input {
+            display: none;
+        }
+        background-color: black;
+        height: 100vh;
+        display: grid;
+        grid-template:
+            "nornen-bli" fit-content(100%)
+            "nornen-sur" fit-content(100%)
+            "nornenButton" fit-content(100%)
+            / 1fr;
+    }
+
+    &__image {
+        grid-area: imageNornen;
+        display: block;
+        max-width: 90%;
+    }
+    &__bli {
+        margin-top: 1rem;
+        display: grid;
+        grid-area: nornen-bli;
+        align-content: center;
+        justify-items: center;
+        grid-template: 
+        "imageNornen" fit-content(100%)
+        "tekst" fit-content(100%)
+        / 1fr;
+    }
+
+    &__sur {
+        margin-top: 1rem;
+        display: none;
+        grid-area: nornen-sur;
+        align-content: center;
+        justify-items: center;
+        grid-template: 
+        "imageNornen" fit-content(100%)
+        "tekst" fit-content(100%)
+        / 1fr;
+    }
+
+    .nornenTekst {
+        color: white;
+        grid-area: tekst;
+        max-width: 90%;
+        font-weight: 700;
+    }
+
+    .nornenButton {
+        grid-area: nornenButton;
+    }
+
+    #checkboxNornen {
+        &:checked ~ .p-nornen__sur {
+            display: grid;
+        }
+
+        &:checked ~ .p-nornen__bli {
+            display: none;
+        }
+    }
+    
+
+    
+}

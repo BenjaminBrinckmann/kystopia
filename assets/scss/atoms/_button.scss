@@ -67,6 +67,19 @@
     grid-area: introButton;
 }
 
+#nornenButton1 {
+    grid-area: nornenButton1;
+}
+
+.nornenButton2 {
+    grid-area: nornenButton2;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 
 .lukk {
     grid-area: button;

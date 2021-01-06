@@ -8,28 +8,48 @@
 
     <div class="p-nornen__wrapper">
 
-        <div class="p-nornen__intro">
             <p class="nornenTekst"> Den onde nornen har kommet! Hør hva hun har å si…</p>
-            <input type="checkbox" id="checkboxNornen1">
-            <label for="checkboxNornen1" class="nornenButton button">Klikk her…</label>
-        </div>
 
-        <div class="p-nornen__bli" id="image-bli">
-            <img class="p-nornen__image" src="/images/nornen-bli.jpg" alt="">
+            <input type="checkbox" id="checkboxNornen1" onchange="playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)">
+            <label for="checkboxNornen1" id="nornenButton1" class="button">Klikk her…</label>
+
+
+        <div class="video-nornenBli" >
+            <video id="videofeil" class="video">
+                <source src="/videofeil.mp4" type="video/mp4">
+            </video>
+            <!-- <img class="video" src="/images/nornen-bli.jpg" alt="" id="video-bli"> -->
             <p class="nornenTekst">{{ with .Params.text.task }}{{ . }}{{ end }}</p>
-            <input type="checkbox" id="checkboxNornen2">
-            <label for="checkboxNornen2" class="nornenButton button">Fullfør…</label>
+
+            <div class="button nornenButton2" onclick="myFunction();playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
+                <p>Fullfør…</p>
+            </div>
+
         </div>
 
-        <div class="p-nornen__sur" id="image-sur">
-            <img class="p-nornen__image" src="/images/nornen-sur.jpg" alt="">
+        <div class="video-nornenSur" id="video-nornenSur">
+            <video id="videoriktig" class="video">
+                <source src="videoriktig.mp4" type="video/mp4">
+            </video>
+            <!-- <img class="video" src="/images/nornen-sur.jpg" alt="" id="video-sur"> -->
             <p class="nornenTekst">{{ with .Params.text.completed }}{{ . }}{{ end }}</p>
-            <div class="nornenButton button">
-                <a href="{{ .RelPermalink }}">lukk(dev)</a>
+            <div class="lukk">
+                <a href="{{ .RelPermalink }}">LUKK(dev)</a>
             </div>
         </div>
 
+        <script>
+            function myFunction() {
+            document.getElementById("video-nornenSur").style.display = "grid";
+            }
+        </script>   
+        
+        <script src="/js/videokontroll.js"></script>
+        <script src="/js/pinch-action.min.js"></script>
+
     </div>
+
+
 </div>
 
 {{ end }}

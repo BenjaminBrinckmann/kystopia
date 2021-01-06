@@ -8,17 +8,25 @@
 
     <div class="p-nornen__wrapper">
 
-        <input type="checkbox" id="checkboxNornen">
-        <label for="checkboxNornen" class="nornenButton button">Fullfør!(dev)</label>
+        <div class="p-nornen__intro">
+            <p class="nornenTekst"> Den onde nornen har kommet! Hør hva hun har å si…</p>
+            <input type="checkbox" id="checkboxNornen1">
+            <label for="checkboxNornen1" class="nornenButton button">Klikk her…</label>
+        </div>
 
         <div class="p-nornen__bli" id="image-bli">
             <img class="p-nornen__image" src="/images/nornen-bli.jpg" alt="">
             <p class="nornenTekst">{{ with .Params.text.task }}{{ . }}{{ end }}</p>
+            <input type="checkbox" id="checkboxNornen2">
+            <label for="checkboxNornen2" class="nornenButton button">Fullfør…</label>
         </div>
-            
+
         <div class="p-nornen__sur" id="image-sur">
             <img class="p-nornen__image" src="/images/nornen-sur.jpg" alt="">
             <p class="nornenTekst">{{ with .Params.text.completed }}{{ . }}{{ end }}</p>
+            <div class="nornenButton button">
+                <a href="{{ .RelPermalink }}">lukk(dev)</a>
+            </div>
         </div>
 
     </div>

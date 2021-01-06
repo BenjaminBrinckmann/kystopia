@@ -17,6 +17,7 @@
         height: 100vh;
         display: grid;
         grid-template:
+            "nornen-intro" fit-content(100%)
             "nornen-bli" fit-content(100%)
             "nornen-sur" fit-content(100%)
             "nornenButton" fit-content(100%)
@@ -28,9 +29,22 @@
         display: block;
         max-width: 90%;
     }
+
+    &__intro {
+        margin-top: 1rem;
+        // display: grid;
+        grid-area: nornen-intro;
+        align-content: center;
+        justify-items: center;
+        // grid-template: 
+        // // "imageNornen" fit-content(100%)
+        // "tekst" fit-content(100%)
+        // / 1fr;
+    }
+
     &__bli {
         margin-top: 1rem;
-        display: grid;
+        display: none;
         grid-area: nornen-bli;
         align-content: center;
         justify-items: center;
@@ -63,13 +77,23 @@
         grid-area: nornenButton;
     }
 
-    #checkboxNornen {
-        &:checked ~ .p-nornen__sur {
+    #checkboxNornen1 {
+        &:checked ~ .p-nornen__bli {
             display: grid;
         }
 
+        &:checked ~ .p-nornen__intro {
+            display: none;
+        }
+    }
+
+    #checkboxNornen2 {
         &:checked ~ .p-nornen__bli {
             display: none;
+        }
+
+        &:checked ~ .p-nornen__sur {
+            display: grid;
         }
     }
     

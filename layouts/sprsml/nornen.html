@@ -8,47 +8,81 @@
 
     <div class="p-nornen__wrapper">
 
-            <p class="nornenTekst"> Den onde nornen har kommet! Hør hva hun har å si…</p>
+        <div class="fill"></div>
 
-            <input type="checkbox" id="checkboxNornen1" onchange="playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)">
-            <label for="checkboxNornen1" id="nornenButton1" class="button">Klikk her…</label>
+        <p class="nornenTekst"> Den onde nornen har kommet! Hør hva hun har å si…</p>
 
 
-        <div class="video-nornenBli" >
+        <div class="button nornenButton1" id="nornenButton1"
+            onclick="showVideo1();playVideo1();pinch.action.logEvent(pinch.action.event.INTERACTION)">
+            <p>Trykk her…</p>
+        </div>
+
+        <div class="video-nornenBli" id="video-nornenBli">
+
             <video id="videofeil" class="video">
                 <source src="/videofeil.mp4" type="video/mp4">
             </video>
-            <!-- <img class="video" src="/images/nornen-bli.jpg" alt="" id="video-bli"> -->
+
             <p class="nornenTekst">{{ with .Params.text.task }}{{ . }}{{ end }}</p>
 
-            <div class="button nornenButton2" onclick="myFunction();playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
-                <p>Fullfør…</p>
+            <div id="countdown" class="countdown"></div>
+
+            <div class="button nornenButton2" id="nornenButton2"
+                onclick="showVideo2();playVideo2();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
+                <h2>FULLFØR…</h2>
             </div>
 
         </div>
 
         <div class="video-nornenSur" id="video-nornenSur">
+
             <video id="videoriktig" class="video">
                 <source src="videoriktig.mp4" type="video/mp4">
             </video>
-            <!-- <img class="video" src="/images/nornen-sur.jpg" alt="" id="video-sur"> -->
+           
             <p class="nornenTekst">{{ with .Params.text.completed }}{{ . }}{{ end }}</p>
+
             <div class="lukk">
                 <a href="{{ .RelPermalink }}">LUKK(dev)</a>
             </div>
+
         </div>
 
         <script>
-            function myFunction() {
-            document.getElementById("video-nornenSur").style.display = "grid";
+            function showVideo1() {
+                document.getElementById("video-nornenBli").style.display = "grid";
             }
-        </script>   
-        
+        </script>
+
+        <script>
+            document.getElementById("nornenButton1").addEventListener("click", function() {
+                var timeleft = 30;
+
+                var downloadTimer = setInterval(function function1() {
+                    document.getElementById("countdown").innerHTML = timeleft;
+
+                    timeleft -= 1;
+                    if (timeleft <= -1) {
+                        clearInterval(downloadTimer);
+                        document.getElementById("nornenButton2").style.display = "grid";
+                        document.getElementById("countdown").style.display = "none"
+                    }
+                }, 1000);
+            });
+        </script>
+
+        <script>
+            function showVideo2() {
+                document.getElementById("video-nornenSur").style.display = "grid";
+            }
+        </script>
+
+
         <script src="/js/videokontroll.js"></script>
         <script src="/js/pinch-action.min.js"></script>
 
     </div>
-
 
 </div>
 

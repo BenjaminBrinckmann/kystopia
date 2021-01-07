@@ -10,23 +10,15 @@
     }
 
     &__wrapper {
-        input {
-            display: none;
-        }
         background-color: black;
         height: 100vh;
         display: grid;
         grid-template:
             "nornen-sur" fit-content(100%)
             "nornen-bli" fit-content(100%)
+            "fill" fit-content(100%)
             "tekst" fit-content(100%)
             "nornenButton1" fit-content(100%)
             / 1fr;
-    }
-
-    #checkboxNornen1 {
-        &:checked ~ .video-nornenBli {
-            display: grid;
-        }
-    }    
+    } 
 }

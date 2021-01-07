@@ -21,6 +21,16 @@
         color: rgba(0, 0, 0, 0.8);
         text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
     }
+
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .button:active {
@@ -67,17 +77,13 @@
     grid-area: introButton;
 }
 
-#nornenButton1 {
+.nornenButton1 {
     grid-area: nornenButton1;
 }
 
 .nornenButton2 {
+    display: none;
     grid-area: nornenButton2;
-
-    p {
-        margin: 0;
-        padding: 0;
-    }
 }
 
 

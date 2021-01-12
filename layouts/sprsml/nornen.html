@@ -20,8 +20,8 @@
 
         <div class="video-nornenBli" id="video-nornenBli">
 
-            <video id="videofeil" class="video">
-                <source src="/videofeil.mp4" type="video/mp4">
+            <video id="nornen-bli" class="video">
+                <source src="/nornen-bli.mp4" type="video/mp4">
             </video>
 
             <p class="nornenTekst">{{ with .Params.text.task }}{{ . }}{{ end }}</p>
@@ -37,10 +37,10 @@
 
         <div class="video-nornenSur" id="video-nornenSur">
 
-            <video id="videoriktig" class="video">
-                <source src="videoriktig.mp4" type="video/mp4">
+            <video id="nornen-sur" class="video">
+                <source src="nornen-sur.mp4" type="video/mp4">
             </video>
-           
+
             <p class="nornenTekst">{{ with .Params.text.completed }}{{ . }}{{ end }}</p>
 
             <div class="lukk">
@@ -56,7 +56,7 @@
         </script>
 
         <script>
-            document.getElementById("nornenButton1").addEventListener("click", function() {
+            document.getElementById("nornenButton1").addEventListener("click", function () {
                 var timeleft = 30;
 
                 var downloadTimer = setInterval(function function1() {
@@ -79,7 +79,20 @@
         </script>
 
 
-        <script src="/js/videokontroll.js"></script>
+        <script>
+            var myVideo1 = document.getElementById("nornen-bli");
+            function playVideo1() {
+                myVideo1.play();
+            }
+
+        </script>
+
+        <script>
+            var myVideo2 = document.getElementById("nornen-sur");
+            function playVideo2() {
+                myVideo2.play();
+            }
+        </script>
         <script src="/js/pinch-action.min.js"></script>
 
     </div>

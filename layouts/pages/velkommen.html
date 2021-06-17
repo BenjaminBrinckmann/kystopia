@@ -1,0 +1,37 @@
+{{ define "title"}}{{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+
+<div class="p-velkommen">
+
+    <p class="p-questions__alert">Kystopia er kun ment for å spille på mobil</p>
+
+    <div class="p-velkommen__wrapper">
+
+        <div class="title">{{ .Title }}</div>
+
+        <div class="content">{{ .Content }}</div>
+
+        <input type="checkbox" id="checkbox0"
+            onchange="playVideo();pinch.action.logEvent(pinch.action.event.GOAL_ACHIEVED)">
+        <label for="checkbox0" id="welkomButton" class="button">Se Intro</label>
+
+        <div class="video-welkom">
+            <video id="videowelkom" class="video">
+                <source src="videowelkom.mp4" type="video/mp4">
+            </video>
+            <div class="lukk">
+				<a href={{ .RelPermalink }} >LUKK(dev)</a>
+			</div>
+        </div>
+
+        <script>
+            var myVideo = document.getElementById("videowelkom");
+            function playVideo() {
+                myVideo.play();
+            }
+        </script>
+        <script src="/js/pinch-action.min.js"></script>
+    </div>
+</div>
+{{ end }}

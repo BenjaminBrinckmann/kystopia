@@ -1,4 +1,4 @@
-.p-frontpage {
+.p-velkommen {
      
     &__wrapper {
         input {
@@ -7,18 +7,17 @@
  
         display: grid;
         grid-template:
-            // "video-welkom" fit-content(100%)
+            "video-welkom" fit-content(100%)
             "title" fit-content(100%)
             "content" fit-content(100%)
-            "q1Button" fit-content(100%)
-            "q2Button" fit-content(100%)
+            "welkomButton" fit-content(100%)
             / 1fr;
     }
  
  
     
     @media screen and (min-width: 48em) {
-        .p-frontpage__wrapper {
+        .p-velkommen__wrapper {
             display: none;
         }
      
@@ -27,12 +26,11 @@
         }
     }
     
-    // #checkbox0 {
+    #checkbox0 {
          
-    //     &:checked ~ .video-welkom {
-    //         display: grid;
-    //     }
-    // }
+        &:checked ~ .video-welkom {
+            display: grid;
+        }
+    }
     
 }
-
